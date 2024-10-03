@@ -1,8 +1,8 @@
+Berikut adalah README yang sudah dirapikan, terutama pada bagian indentasi kode:
+
 # Welog V7
 
-`Welog` is a logging library designed for Go applications, integrating with ElasticSearch and utilizing `logrus` for
-structured logging. It supports log management for Go applications running on popular web frameworks like Fiber and Gin,
-providing detailed request and response logging.
+`Welog` is a logging library designed for Go applications, integrating with ElasticSearch and utilizing `logrus` for structured logging. It supports log management for Go applications running on popular web frameworks like Fiber and Gin, providing detailed request and response logging.
 
 ## Installation
 
@@ -14,22 +14,20 @@ go get github.com/christiandoxa/welog-v7
 
 ## Configuration
 
-`Welog` uses a configuration struct to set up ElasticSearch connection parameters. The `Config` struct allows you to
-define the ElasticSearch URL, username, password, and index name:
+`Welog` uses a configuration struct to set up ElasticSearch connection parameters. The `Config` struct allows you to define the ElasticSearch URL, username, password, and index name:
 
 ```go
 type Config struct {
-ElasticIndex    string
-ElasticURL      string
-ElasticUsername string
-ElasticPassword string
+    ElasticIndex    string
+    ElasticURL      string
+    ElasticUsername string
+    ElasticPassword string
 }
 ```
 
 ### Setting Configuration with `SetConfig`
 
-The `SetConfig` function is used to set ElasticSearch connection parameters via environment variables. Ensure you call
-this function at the start of your application:
+The `SetConfig` function is used to set ElasticSearch connection parameters via environment variables. Ensure you call this function at the start of your application.
 
 ### Example Usage
 
@@ -37,17 +35,16 @@ Call `SetConfig` with your configuration details before initializing the middlew
 
 ```go
 config := welog.Config{
-ElasticIndex:    "your-index",
-ElasticURL:      "http://localhost:9200",
-ElasticUsername: "your-username",
-ElasticPassword: "your-password",
+    ElasticIndex:    "your-index",
+    ElasticURL:      "http://localhost:9200",
+    ElasticUsername: "your-username",
+    ElasticPassword: "your-password",
 }
 
 welog.SetConfig(config)
 ```
 
-By calling `SetConfig`, you ensure that the logging library is properly configured to connect to your ElasticSearch
-instance, allowing detailed request and response logging to function as expected.
+By calling `SetConfig`, you ensure that the logging library is properly configured to connect to your ElasticSearch instance, allowing detailed request and response logging to function as expected.
 
 ## Usage
 
@@ -78,17 +75,17 @@ When using a custom Fiber client, you can log client requests with `welog-v7` us
 
 ```go
 welog.LogFiberClient(
-c,
-requestURL,
-requestMethod,
-requestContentType,
-requestHeader,
-requestBody,
-responseHeader,
-responseBody,
-responseStatus,
-requestTime,
-responseLatency,
+    c,
+    requestURL,
+    requestMethod,
+    requestContentType,
+    requestHeader,
+    requestBody,
+    responseHeader,
+    responseBody,
+    responseStatus,
+    requestTime,
+    responseLatency,
 )
 ```
 
@@ -101,17 +98,17 @@ For custom logging of client requests within Gin, use the `LogGinClient` method:
 
 ```go
 welog.LogGinClient(
-c,
-requestURL,
-requestMethod,
-requestContentType,
-requestHeader,
-requestBody,
-responseHeader,
-responseBody,
-responseStatus,
-requestTime,
-responseLatency,
+    c,
+    requestURL,
+    requestMethod,
+    requestContentType,
+    requestHeader,
+    requestBody,
+    responseHeader,
+    responseBody,
+    responseStatus,
+    requestTime,
+    responseLatency,
 )
 ```
 
@@ -120,8 +117,7 @@ responseLatency,
 
 ### Logging Outside of Handlers
 
-If you need to log errors or other information outside of a Fiber or Gin handler, you can directly use the
-`logger.Logger()` instance:
+If you need to log errors or other information outside of a Fiber or Gin handler, you can directly use the `logger.Logger()` instance:
 
 ```go
 logger.Logger().Fatal(err)
@@ -129,8 +125,7 @@ logger.Logger().Fatal(err)
 
 ### Logging Inside Handlers in Fiber
 
-When logging within a Fiber handler, use the logger instance stored in the Fiber context to ensure consistent and
-contextual logging:
+When logging within a Fiber handler, use the logger instance stored in the Fiber context to ensure consistent and contextual logging:
 
 ```go
 c.Locals("logger").(*logrus.Entry).Error(err)
@@ -138,8 +133,7 @@ c.Locals("logger").(*logrus.Entry).Error(err)
 
 ### Logging Inside Handlers in Gin
 
-When logging within a Gin handler, use the logger instance stored in the Gin context to ensure consistent and contextual
-logging:
+When logging within a Gin handler, use the logger instance stored in the Gin context to ensure consistent and contextual logging:
 
 ```go
 c.MustGet("logger").(*logrus.Entry).Error(err)
@@ -210,14 +204,16 @@ Below is a sample output log generated by `logFiber` and `LogFiberClient` functi
 }
 ```
 
-This log provides detailed information about the request and response, including headers, body, latency, status, and
-additional metadata, which is useful for debugging and monitoring the application.
+This log provides detailed information about the request and response, including headers, body, latency, status, and additional metadata, which is useful for debugging and monitoring the application.
 
 ## Contributing
 
-Contributions to `welog-v7` are welcome! If you have suggestions, bug reports, or want to contribute code, please create
-a pull request or open an issue on GitHub.
+Contributions to `welog-v7` are welcome! If you have suggestions, bug reports, or want to contribute code, please create a pull request or open an issue on GitHub.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Saya sudah merapikan dan memperbaiki indentasi kode agar lebih mudah dibaca.
