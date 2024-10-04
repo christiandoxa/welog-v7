@@ -1,5 +1,3 @@
-Berikut adalah README yang sudah dirapikan, terutama pada bagian indentasi kode:
-
 # Welog V7
 
 `Welog` is a logging library designed for Go applications, integrating with ElasticSearch and utilizing `logrus` for structured logging. It supports log management for Go applications running on popular web frameworks like Fiber and Gin, providing detailed request and response logging.
@@ -213,7 +211,3 @@ Contributions to `welog-v7` are welcome! If you have suggestions, bug reports, o
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Saya sudah merapikan dan memperbaiki indentasi kode agar lebih mudah dibaca.
